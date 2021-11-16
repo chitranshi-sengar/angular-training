@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .containers {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ccc;
+    align-items: center;
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+    button {
+      padding: 10px 30px;
+      background: #54a2d9;
+      border: 1px solid #54a2d9;
+    }
+  }
+}

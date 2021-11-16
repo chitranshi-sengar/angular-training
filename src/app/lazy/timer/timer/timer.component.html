@@ -1,0 +1,10 @@
+<div class="border">
+  <div class="timer-main">
+    <app-count-down-timer [timer]="timer"></app-count-down-timer>
+    <app-input-timer (timerEvent)="updateTimer($event)" (logEvent)="updatelog($event)"></app-input-timer>
+  </div>
+  <div class="timer-main">
+    <app-timer-log [logData]="logData"></app-timer-log>
+    <app-count-click-timer [logData]="logData"></app-count-click-timer>
+  </div>
+</div>

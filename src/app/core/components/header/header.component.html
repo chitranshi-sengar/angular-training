@@ -1,0 +1,45 @@
+<header class="border--default">
+  <p class="float-right">{{ trans.language }}: {{ config.defaultLanguage }}</p>
+  <h2>Header</h2>
+  <nav>
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+        <a [routerLink]="['/']" [title]="trans.home">
+          {{ trans.home }}
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/', routing.products.base]" [title]="trans.products">
+          {{ trans.products }}
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/', routing.timer.base]" [title]="trans.timer">
+          {{ trans.timer }}
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/', routing.timer_subject.base]"
+          [title]="trans.timer_subject"
+        >
+          {{ trans.timer_subject }}
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/', routing.students.base]" [title]="trans.students">
+          {{ trans.students }}
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/', routing.dynamic_div.base]"
+          [title]="trans.dynamic_div"
+        >
+          {{ trans.dynamic_div }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

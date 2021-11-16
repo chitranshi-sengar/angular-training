@@ -1,0 +1,31 @@
+<form [formGroup]="form">
+  <button (click)="changeView(true)">Grid View</button>
+  <button (click)="changeView(false)">List View</button>
+  <select
+    formControlName="priceFilter"
+    class="form-control"
+    (change)="changeSorting()"
+  >
+    <option value="1">Low to High</option>
+    <option value="2">High to Low</option>
+  </select>
+</form>
+<div class="main-container">
+  <div
+    *ngFor="let data of products$ | async"
+    [ngStyle]="{ width: grid ? '25%' : '50%' }"
+  >
+    <div class="item">
+      <div>
+        {{ data.title }}
+      </div>
+      <img [attr.src]="data.image" />
+      <div>Price: Rs.{{ data.price }}</div>
+      <div>
+        {{ data.description }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-user></app-user>

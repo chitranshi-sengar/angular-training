@@ -1,0 +1,10 @@
+<div class="main height80">
+  <div class="border height80 text-center">
+    <label>Enter Timer Limit</label>
+    <input type="number" [(ngModel)]="timer" />
+    <div>
+      <button (click)="startPauseTimer(timer)">Start/Pause</button>
+      <button (click)="resetTimer()">Reset</button>
+    </div>
+  </div>
+</div>

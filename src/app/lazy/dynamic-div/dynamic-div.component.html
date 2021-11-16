@@ -1,0 +1,21 @@
+<!-- <div class="main">
+  <div class="containers" *ngFor="let data of totalContainers">
+    <button (click)="clickBox(data.id)"> {{data.id}}</button>
+   
+  </div>
+</div> -->
+<!-- <div> -->
+
+  <infinite-scroll (scrolled)="onScroll()" style="height: 400px; overflow-y: auto">
+    <div class="main">
+      <div class="containers" *ngFor="let data of totalContainers">
+        <button (click)="clickBox(data.id)"> {{data.id}}</button>
+       
+      </div>
+    </div>
+    <!-- <div class="alert alert-dark"*ngIf="isLoading$ | async">
+     Fetching tweets...
+    </div> -->
+  </infinite-scroll>
+
+<!-- </div> -->

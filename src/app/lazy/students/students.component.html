@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let header of tableHeader" class="table-header"
+      sortable="{{header}}" (sort)="onSort($event)">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of studentData">
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.class }}</td>
+      <td>{{ student.section }}</td>
+      <td>{{ student.subject1 }}</td>
+      <td>{{ student.subject2 }}</td>
+      <td>{{ student.subject3 }}</td>
+    </tr>
+  </tbody>
+</table>
