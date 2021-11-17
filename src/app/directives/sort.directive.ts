@@ -1,6 +1,7 @@
 import {Directive, EventEmitter, Input, Output} from '@angular/core';
+import { Students } from '../store/models/students.model';
 
-export type SortColumn = any;
+export type SortColumn = Students | '';
 export type SortDirection = 'asc' | 'desc' | '';
 const rotate: {[key: string]: SortDirection} = { 'asc': 'desc', 'desc': '', '': 'asc' };
 

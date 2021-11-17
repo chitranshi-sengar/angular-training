@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-best-boilerplate": {
+    "angular-traning": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-best-boilerplate",
+            "outputPath": "dist/angular-traning",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -107,18 +107,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-best-boilerplate:build"
+            "browserTarget": "angular-traning:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-best-boilerplate:build:production"
+              "browserTarget": "angular-traning:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-best-boilerplate:build"
+            "browserTarget": "angular-traning:build"
           }
         },
         "test": {
@@ -152,7 +152,7 @@
         }
       }
     },
-    "angular-best-boilerplate-e2e": {
+    "angular-traning-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -160,11 +160,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-best-boilerplate:serve"
+            "devServerTarget": "angular-traning:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-best-boilerplate:serve:production"
+              "devServerTarget": "angular-traning:serve:production"
             }
           }
         },
@@ -180,5 +180,5 @@
       }
     }
   },
-  "defaultProject": "angular-best-boilerplate"
+  "defaultProject": "angular-traning"
 }
