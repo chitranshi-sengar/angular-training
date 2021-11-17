@@ -2,5 +2,12 @@
     width: 50%;
 }
 .main {
-    padding: 10px;
+    display: flex;
+    .container {
+        margin: 5px;
+        .value {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
 }

@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 })
 export class DynamicDivComponent implements OnInit {
   total: number = 10;
-  totalContainers: any[] = [];
+  totalContainers: object[] = [];
   isLoading$: Observable<boolean>;
 
   constructor() {}
@@ -22,10 +22,8 @@ export class DynamicDivComponent implements OnInit {
     alert("Button " + id + " is clicked");
   }
   onScroll() {
-    console.log("scroll")
     for (let i = 0; i < 10; i++) {
       this.totalContainers.push({ id: this.totalContainers.length + 1 });
     }
-    // this.totalContainers.push({ id: this.totalContainers.length+1 });
   }
 }

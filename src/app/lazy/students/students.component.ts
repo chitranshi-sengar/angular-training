@@ -6,11 +6,11 @@ import {
   SortColumn,
   SortEvent,
 } from "src/app/directives/sort.directive";
-import { StudentsService } from "src/app/services/students.services";
 import {
   FetchStudents,
   SetStudents,
 } from "src/app/store/actions/students.action";
+import { Students } from "src/app/store/models/students.model";
 import AppState from "src/app/store/state/students.state";
 
 @Component({
@@ -19,15 +19,12 @@ import AppState from "src/app/store/state/students.state";
   styleUrls: ["./students.component.scss"],
 })
 export class StudentsComponent implements OnInit {
-  students$: Observable<any>;
-  tableHeader: any;
-  studentData: any;
+  students$: Observable<Students[]>;
+  tableHeader: string[];
+  studentData: Students[];
   @ViewChildren(SortableHeader) headers: QueryList<SortableHeader>;
 
-  constructor(
-    private store: Store<AppState>,
-    private service: StudentsService
-  ) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
     this.store.dispatch(new FetchStudents());
@@ -35,14 +32,11 @@ export class StudentsComponent implements OnInit {
     this.students$.subscribe((data) => {
       if (data.length > 0) {
         this.tableHeader = Object.keys(data[0]);
-        console.log(this.tableHeader);
         this.studentData = data;
       }
     });
   }
   onSort({ column, direction }: SortEvent) {
-    // resetting other headers
-    console.log(column, direction);
     this.headers.forEach((header) => {
       if (header.sortable !== column) {
         header.direction = "";
@@ -51,15 +45,13 @@ export class StudentsComponent implements OnInit {
 
     let data = this.sort(this.studentData, column, direction);
     this.store.dispatch(new SetStudents(data));
-    // console.log(this.studentData)
-    this.service.sortColumn = column;
-    this.service.sortDirection = direction;
   }
-  sort(students: any[], column: SortColumn, direction: string): any[] {
-    // console.log(students, column, direction);
-
+  sort(
+    students: Students[],
+    column: SortColumn,
+    direction: string
+  ): Students[] {
     if (direction === "" || column === "") {
-      // return students;
       return [...students].sort((a, b) => {
         const res = this.compare(a["id"], b["id"]);
         return res;

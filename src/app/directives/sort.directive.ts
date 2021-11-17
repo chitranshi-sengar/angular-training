@@ -1,5 +1,4 @@
 import {Directive, EventEmitter, Input, Output} from '@angular/core';
-// import {Country} from './country';
 
 export type SortColumn = any;
 export type SortDirection = 'asc' | 'desc' | '';
@@ -25,7 +24,6 @@ export class SortableHeader {
   @Output() sort = new EventEmitter<SortEvent>();
 
   rotate() {
-    console.log("rotate")
     this.direction = rotate[this.direction];
     this.sort.emit({column: this.sortable, direction: this.direction});
   }

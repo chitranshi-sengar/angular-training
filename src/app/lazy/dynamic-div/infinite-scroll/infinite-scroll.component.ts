@@ -39,12 +39,10 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
     }, options);
 
     this.observer.observe(this.anchor.nativeElement);
-    console.log(this.observer);
   }
 
   private isHostScrollable() {
     const style = window.getComputedStyle(this.element);
-    console.log(style);
     return (
       style.getPropertyValue("overflow") === "auto" ||
       style.getPropertyValue("overflow-y") === "scroll"

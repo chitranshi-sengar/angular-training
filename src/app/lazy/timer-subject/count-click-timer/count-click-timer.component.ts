@@ -1,19 +1,17 @@
 import {
   Component,
   Input,
-  OnChanges,
   OnInit,
-  SimpleChanges,
 } from "@angular/core";
-import { TimerService } from "src/app/services/timer.services";
+import { LogData, TimerService } from "src/app/services/timer.services";
 
 @Component({
   selector: "app-count-click-timer",
   templateUrl: "./count-click-timer.component.html",
   styleUrls: ["./count-click-timer.component.scss"],
 })
-export class CountClickTimerComponent implements OnInit, OnChanges {
-  @Input() logData: any;
+export class CountClickTimerComponent implements OnInit {
+  @Input() logData: LogData;
   start: number = 0;
   pause: number = 0;
 
@@ -21,7 +19,7 @@ export class CountClickTimerComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.timerService.logData.subscribe(data=>{
-      if (data.time) {
+      if (data && data.time) {
         if (data.type === "start") {
           this.start++;
         } else if (data.type === "pause") {
@@ -33,18 +31,5 @@ export class CountClickTimerComponent implements OnInit, OnChanges {
       }
     })
 
-  }
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-    // if (data.time) {
-    //   if (data.type === "start") {
-    //     this.start++;
-    //   } else if (data.type === "pause") {
-    //     this.pause++;
-    //   }
-    // } else {
-    //   this.start = 0;
-    //   this.pause = 0;
-    // }
   }
 }

@@ -1,10 +1,7 @@
-<!-- {{logData |json }} -->
-<!-- {{timerLog | json}} -->
-
 <div class="main height80">
   <div class="height80 text-center">
     <div *ngFor="let data of timerLog">
-      {{ data.type === 'start' ? 'Started at ' : 'Paused at ' }}
+      {{ data.type === 'start' ? 'Started at ' : (data.type === 'pause' ? 'Paused at ': 'Reset at ') }}
       {{ data.time }}
     </div>
   </div>

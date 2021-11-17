@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogData } from 'src/app/services/timer.services';
 
 @Component({
   selector: 'app-timer',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
 
-  timer:number;
-  logData: any
+  timer: number;
+  logData: LogData
 
   constructor() { }
 
@@ -18,7 +19,6 @@ export class TimerComponent implements OnInit {
     this.timer = event;
   }
   updatelog(event){
-    console.log(event)
     this.logData = event;
   }
 }

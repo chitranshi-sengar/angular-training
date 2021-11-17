@@ -1,4 +1,11 @@
-<div>{{start}} 
-{{pause}}</div>
-<span>Started</span>
-<span>Paused</span>
+<div class="main" *ngIf="start > 0 || pause > 0">
+    <div class="container">
+      <div class="value">{{ start }}</div>
+      <div>Started</div>
+    </div>
+    <div class="container">
+      <div class="value">{{ pause }}</div>
+      <div>Paused</div>
+    </div>
+  </div>
+  

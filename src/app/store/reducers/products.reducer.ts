@@ -1,7 +1,8 @@
 import { ProductsAction } from "../actions/products.action";
+import { Products } from "../models/products.model";
 
 export interface ProductsState {
-    products: any
+    products: Products[];
 }
 
 const initialState: ProductsState = {

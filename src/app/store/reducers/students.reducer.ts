@@ -1,7 +1,8 @@
 import { StudentsAction } from "../actions/students.action";
+import { Students } from "../models/students.model";
 
 export interface StudentsState {
-    students: any
+    students: Students[];
 }
 
 const initialState: StudentsState = {

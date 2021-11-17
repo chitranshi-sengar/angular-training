@@ -1,6 +1,6 @@
 import { Translations } from '../app/core/interfaces/translations.interface';
 
-export const en_GB: Translations = {
+export const translations: Translations = {
   hello_world: 'Hello World',
   products: 'Products',
   timer: 'Timer',
